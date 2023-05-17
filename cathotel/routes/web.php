@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HewanController;
 use App\Models\Hewan;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,4 @@ Route::get('/test', function () {
 });
 
 Route::resource('hewan', HewanController::class);
+Route::resource('customer', CustomerController::class);
