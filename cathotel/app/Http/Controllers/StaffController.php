@@ -13,7 +13,7 @@ class StaffController extends Controller
     public function index()
     {
         //
-        $paket = Staff::all();
+        $staff = Staff::all();
         return view('staff.index')->with('staff', $staff);
     }
 
