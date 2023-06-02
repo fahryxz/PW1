@@ -16,7 +16,7 @@ class PaketController extends Controller
         $paket = Paket::all();
         return view('paket.index')->with('paket', $paket);
     }
-    }
+    
 
     /**
      * Show the form for creating a new resource.
