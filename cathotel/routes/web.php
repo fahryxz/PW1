@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HewanController;
+use App\Http\Controllers\StaffController;
 use App\Models\Hewan;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout.main');
 });
 
 Route::get('/test', function () {
@@ -27,4 +28,4 @@ Route::get('/test', function () {
 Route::resource('hewan', HewanController::class);
 Route::resource('customer', CustomerController::class);
 Route::resource('paket', PaketController::class);
-Route::resource('staff', StaffController::class);
+Route::resource('Staff', StaffController::class);

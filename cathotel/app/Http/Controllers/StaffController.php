@@ -14,7 +14,7 @@ class StaffController extends Controller
     {
         //
         $staff = Staff::all();
-        return view('staff.index')->with('staff', $staff);
+        return view('Staff.index')->with('staff', $staff);
     }
 
     /**
