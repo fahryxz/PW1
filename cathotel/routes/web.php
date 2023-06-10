@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HewanController;
+use App\Http\Controllers\PaketController;
 use App\Http\Controllers\StaffController;
 use App\Models\Hewan;
 use Illuminate\Support\Facades\Route;
