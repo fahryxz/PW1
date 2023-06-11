@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\Hewan;
 use Illuminate\Http\Request;
 
@@ -23,6 +24,8 @@ class HewanController extends Controller
     public function create()
     {
         //
+        $customer = Customer::all();
+        return view('hewan.create') -> with ('customers', $customer);
     }
 
     /**
@@ -31,6 +34,25 @@ class HewanController extends Controller
     public function store(Request $request)
     {
         //
+
+        $validasi = $request -> validate([
+            'namaHewan' => 'required',
+            'namaPemilik' => 'required',
+            'jenisHewan' => 'required',
+            'jkHewan' => 'required',
+            'breedHewan' => 'required'
+         ]);
+ 
+         $hewan = new Hewan();
+         $hewan -> namaHewan = $validasi['namaHewan'];
+         $hewan -> namaPemilik = $validasi['namaPemilik'];
+         $hewan -> jenisHewan = $validasi['jenisHewan'];
+         $hewan -> jkHewan = $validasi['jkHewan'];
+         $hewan -> breedHewan = $validasi['breedHewan'];
+         $hewan -> save();
+ 
+         return redirect() -> route('hewan.index') -> with('success', 'Data berhasil disimpan');
+ 
     }
 
     /**

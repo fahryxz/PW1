@@ -15,6 +15,7 @@ class StaffController extends Controller
         //
         $staff = Staff::all();
         return view('staff.index')->with('staff', $staff);
+
     }
 
     /**
@@ -23,8 +24,8 @@ class StaffController extends Controller
     public function create()
     {
         //
-        
         return view('staff.create');
+        
     }
 
     /**
@@ -47,6 +48,7 @@ class StaffController extends Controller
         $staff->save();
         
         return redirect() -> route('staff.index')-> with('success', 'Data berhasil disimpan');
+
     }
 
     /**
