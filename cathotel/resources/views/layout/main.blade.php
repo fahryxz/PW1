@@ -154,18 +154,13 @@
               </a>
             </li>
             <li class="menu-item">
-              <a href="{{ route ('Staff.index')}}" class="menu-link">
+              <a href="{{ route ('staff.index')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Staff</div>
               </a>
             </li>
 
-            <li class="menu-item">
-              <a href="" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Tambah Staff</div>
-              </a>
-            </li>
+            
 
             <!-- Layouts -->
             <li class="menu-item">
@@ -1081,14 +1076,7 @@
     </div>
     <!-- / Layout wrapper -->
 
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
+    
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->

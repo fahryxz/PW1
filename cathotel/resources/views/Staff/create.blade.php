@@ -2,14 +2,22 @@
 
 @section('content')
 
-    
+  @if ($errors->any())
+  <div class="alert alert-danger">
+      <ul>
+          @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+          @endforeach
+      </ul>
+  </div>
+  @endif
     <div class="col-xl">
       <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
           <h5 class="mb-0">Tambah Staff</h5>
         </div>
         <div class="card-body">
-          <form action = "{{route('Staff.store')}}" method = "POST" class="forms-sample">
+          <form action = "{{route('staff.store')}}" method = "POST" class="forms-sample">
             @csrf
             <div class="mb-3">
               <label for="namastaff">Nama Staff</label>
@@ -30,6 +38,7 @@
                 @enderror
               </div>
             </div>
+            
             <div class="mb-3">
               <label for="alamatstaff">Alamat</label>
               <div class="input-group input-group-merge">
@@ -38,17 +47,17 @@
                 ></span>
                 <input
                   type="text"
-                  name="alamatstaff"
                   class="form-control"
+                  name="alamatstaff"
                   placeholder="ACME Inc."
-                  aria-label="ACME Inc."
-                  aria-describedby="basic-icon-default-company2"
+                  value = "{{old('alamatstaff')}}"
                 />
                 @error('alamatstaff')
                   <span class = "txt-danger">{{$message}} </span>
                 @enderror
               </div>
             </div>
+
             <div class="mb-3">
               <label for="emailstaff">Email</label>
               <div class="input-group input-group-merge">
@@ -59,9 +68,8 @@
                   class="form-control"
                   placeholder="john.doe"
                   aria-label="john.doe"
-                  aria-describedby="basic-icon-default-email2"
+                  value = "{{old('emailstaff')}}"
                 />
-                <span id="basic-icon-default-email2" class="input-group-text">@gmail.com</span>
                 @error('emailstaff')
                   <span class = "txt-danger">{{$message}} </span>
                 @enderror
@@ -71,7 +79,7 @@
             
             
             <button type="submit" class="btn btn-info">Send</button>
-            <a href = "{{route('Staff.index')}}" class="btn btn-secondary">Cancel</a>
+            <a href = "{{route('staff.index')}}" class="btn btn-secondary">Cancel</a>
           </form>
         </div>
       </div>

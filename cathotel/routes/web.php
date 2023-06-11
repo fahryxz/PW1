@@ -29,4 +29,4 @@ Route::get('/test', function () {
 Route::resource('hewan', HewanController::class);
 Route::resource('customer', CustomerController::class);
 Route::resource('paket', PaketController::class);
-Route::resource('Staff', StaffController::class);
+Route::resource('staff', StaffController::class);

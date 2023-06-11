@@ -7,7 +7,7 @@
     <div class="card-body">
       <div class="table-responsive text-nowrap">
         <div class="mb-3">
-            <a href = "{{ route('Staff.create')}}" type="button" class="btn btn-info btn-rounded btn-fw">+Tambah</a>
+            <a href = "{{ route('staff.create')}}" type="button" class="btn btn-info btn-rounded btn-fw">+Tambah</a>
           </div>
         <table class="table table-bordered">
           <thead>
@@ -27,19 +27,12 @@
                     <td>{{ $item['alamatstaff']}}</td>
                     <td>{{ $item['emailstaff']}}</td>
                     <td>
-                        <div class="dropdown">
-                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                            <i class="bx bx-dots-vertical-rounded"></i>
-                          </button>
-                          
-                            <a class="dropdown-item" href=""
+                            <a href=""
                               ><i class="bx bx-edit-alt me-2"></i> Edit</a
                             >
-                            <a class="dropdown-item" href=""
+                            <a  href=""
                               ><i class="bx bx-trash me-2"></i> Delete</a
                             >
-                        
-                        </div>
                       </td>
                 </tr>
             @endforeach

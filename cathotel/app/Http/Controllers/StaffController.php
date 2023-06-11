@@ -14,7 +14,7 @@ class StaffController extends Controller
     {
         //
         $staff = Staff::all();
-        return view('Staff.index')->with('staff', $staff);
+        return view('staff.index')->with('staff', $staff);
     }
 
     /**
@@ -24,7 +24,7 @@ class StaffController extends Controller
     {
         //
         
-        return view('Staff.create');
+        return view('staff.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class StaffController extends Controller
         //
         $validasi = $request -> validate([
             'namastaff' => 'required',
-            'alamastaff' => 'required',
+            'alamatstaff' => 'required',
             'emailstaff' => 'required'
         ]);
 
@@ -45,7 +45,8 @@ class StaffController extends Controller
         $staff -> emailstaff = $validasi['emailstaff'];
 
         $staff->save();
-        return redirect() -> route('Staff.index')-> with('success', 'Data berhasil disimpan');
+        
+        return redirect() -> route('staff.index')-> with('success', 'Data berhasil disimpan');
     }
 
     /**
