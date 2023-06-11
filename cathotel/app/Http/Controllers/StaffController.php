@@ -23,6 +23,8 @@ class StaffController extends Controller
     public function create()
     {
         //
+        
+        return view('Staff.create');
     }
 
     /**
@@ -31,6 +33,19 @@ class StaffController extends Controller
     public function store(Request $request)
     {
         //
+        $validasi = $request -> validate([
+            'namastaff' => 'required',
+            'alamastaff' => 'required',
+            'emailstaff' => 'required'
+        ]);
+
+        $staff = new Staff();
+        $staff -> namastaff = $validasi['namastaff'];
+        $staff -> alamatstaff = $validasi['alamatstaff'];
+        $staff -> emailstaff = $validasi['emailstaff'];
+
+        $staff->save();
+        return redirect() -> route('Staff.index')-> with('success', 'Data berhasil disimpan');
     }
 
     /**

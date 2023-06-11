@@ -3,9 +3,12 @@
 @section('content')
  <!-- Bordered Table -->
  <div class="card">
-    <h5 class="card-header">Bordered Table</h5>
+    <h5 class="card-header">Daftar Staff</h5>
     <div class="card-body">
       <div class="table-responsive text-nowrap">
+        <div class="mb-3">
+            <a href = "{{ route('Staff.create')}}" type="button" class="btn btn-info btn-rounded btn-fw">+Tambah</a>
+          </div>
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -28,14 +31,14 @@
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                             <i class="bx bx-dots-vertical-rounded"></i>
                           </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"
+                          
+                            <a class="dropdown-item" href=""
                               ><i class="bx bx-edit-alt me-2"></i> Edit</a
                             >
-                            <a class="dropdown-item" href="javascript:void(0);"
+                            <a class="dropdown-item" href=""
                               ><i class="bx bx-trash me-2"></i> Delete</a
                             >
-                          </div>
+                        
                         </div>
                       </td>
                 </tr>
