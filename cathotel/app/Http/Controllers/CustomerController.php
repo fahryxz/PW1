@@ -23,6 +23,7 @@ class CustomerController extends Controller
     public function create()
     {
         //
+        return view('customer.create');
     }
 
     /**
@@ -31,6 +32,22 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         //
+        $validasi = $request -> validate([
+           'namaCustomer' => 'required',
+           'alamatCustomer' => 'required',
+           'nohpCustomer' => 'required',
+           'emailCustomer' => 'required'
+        ]);
+
+        $customer = new Customer();
+        $customer -> namaCustomer = $validasi['namaCustomer'];
+        $customer -> alamatCustomer = $validasi['alamatCustomer'];
+        $customer -> nohpCustomer = $validasi['nohpCustomer'];
+        $customer -> emailCustomer = $validasi['emailCustomer'];
+
+        $customer -> save();
+
+        return redirect() -> route('customer.index') -> with('success', 'Data berhasil disimpan');
     }
 
     /**
