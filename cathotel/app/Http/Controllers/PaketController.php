@@ -14,7 +14,7 @@ class PaketController extends Controller
     {
         //
         $paket = Paket::all();
-        return view('paket.index')->with('paket', $paket);
+        return view('paket.index') -> with('paket', $paket);
     }
     
 
@@ -24,6 +24,7 @@ class PaketController extends Controller
     public function create()
     {
         //
+        return view('paket.create');
     }
 
     /**
@@ -32,6 +33,22 @@ class PaketController extends Controller
     public function store(Request $request)
     {
         //
+        $validasi = $request -> validate([
+            'tiperuang' => 'required|unique:paket',
+            'makanan' => 'required',
+            'grooming' => 'required',
+            'hargaperhari' => 'required'
+        ]);
+
+        $paket = new Paket();
+        $paket -> tiperuang = $validasi['tiperuang'];
+        $paket -> makanan = $validasi['makanan'];
+        $paket -> grooming = $validasi['grooming'];
+        $paket -> hargaperhari = $validasi['hargaperhari'];
+
+        $paket->save();
+        
+        return redirect() -> route('paket.index')-> with('success', 'Data berhasil disimpan');
     }
 
     /**
