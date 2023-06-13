@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pakets', function (Blueprint $table) {
-            $table->uuid('idpaket');
-            $table->primary('idpaket');
+            $table->uuid('id');
+            $table->primary('id');
 
             $table->string('tiperuang', 100);
             $table->string('makanan', 100);

@@ -3,14 +3,16 @@
 @section('content')
  <!-- Bordered Table -->
  <div class="card">
-    <h5 class="card-header">Bordered Table</h5>
+    <h5 class="card-header">Daftar Paket</h5>
     <div class="card-body">
       <div class="table-responsive text-nowrap">
+        <div class="mb-3">
+            <a href = "{{ route('paket.create')}}" type="button" class="btn btn-info btn-rounded btn-fw">+Tambah</a>
+          </div>
         <table class="table table-bordered">
           <thead>
             <tr>
             
-              <th>Idpaket</th>
               <th>Tipe Ruang</th>
               <th>Makanan</th>
               <th>Grooming</th>
@@ -18,9 +20,8 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($staff as $item)
+            @foreach ($paket as $item)
                 <tr>
-                    <td>{{ $item['idpaket']}}</td>
                     <td>{{ $item['tiperuang']}}</td>
                     <td>{{ $item['makanan']}}</td>
                     <td>{{ $item['grooming']}}</td>
