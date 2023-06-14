@@ -9,5 +9,5 @@ use Illuminate\Database\Eloquent\Model;
 class Paket extends Model
 {
     use HasFactory, HasUuids;
-    protected $table = 'pakets';
+    protected $table = 'paket';
 }
