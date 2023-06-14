@@ -23,21 +23,19 @@
             <div class="mb-3">
               <label for="tiperuang">Tipe Ruang</label>
               <div class="input-group input-group-merge">
-                <span id="basic-icon-default-company2" class="input-group-text"
-                  ><i class="bx bx-buildings"></i
-                ></span>
+                <span class="input-group-text"><i class="bx bx-envelope"></i></span>
                 <input
                   type="text"
-                  class="form-control"
                   name="tiperuang"
-                  placeholder="ACME Inc."
+                  class="form-control"
+                  placeholder="john.doe"
+                  aria-label="john.doe"
                   value = "{{old('tiperuang')}}"
                 />
                 @error('tiperuang')
                   <span class = "txt-danger">{{$message}} </span>
                 @enderror
               </div>
-            </div>
 
             <div class="mb-3">
               <label for="makanan">Makanan</label>
