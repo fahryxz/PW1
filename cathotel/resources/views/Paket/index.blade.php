@@ -17,6 +17,7 @@
               <th>Makanan</th>
               <th>Grooming</th>
               <th>Harga Perhari</th>
+              <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -27,19 +28,15 @@
                     <td>{{ $item['grooming']}}</td>
                     <td>{{ $item['hargaperhari']}}</td>
                     <td>
-                        <div class="dropdown">
-                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                            <i class="bx bx-dots-vertical-rounded"></i>
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"
-                              ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                            >
-                            <a class="dropdown-item" href="javascript:void(0);"
-                              ><i class="bx bx-trash me-2"></i> Delete</a
-                            >
-                          </div>
-                        </div>
+                      
+                          
+                      <a href=""
+                      ><i class="bx bx-edit-alt me-2"></i> Edit</a
+                    >
+                    <a  href=""
+                      ><i class="bx bx-trash me-2"></i> Delete</a
+                    >
+                        
                       </td>
                 </tr>
             @endforeach
