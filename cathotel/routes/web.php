@@ -3,6 +3,7 @@
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HewanController;
 use App\Http\Controllers\PaketController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\StaffController;
 use App\Models\Hewan;
 use Illuminate\Support\Facades\Route;
@@ -30,3 +31,4 @@ Route::resource('hewan', HewanController::class);
 Route::resource('customer', CustomerController::class);
 Route::resource('paket', PaketController::class);
 Route::resource('staff', StaffController::class);
+Route::resource('room', RoomController::class);
