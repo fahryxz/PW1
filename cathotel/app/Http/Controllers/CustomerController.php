@@ -67,6 +67,8 @@ class CustomerController extends Controller
     public function edit(Customer $customer)
     {
         //
+        return view('customer.edit')
+        ->with('customer', $customer);
     }
 
     /**
@@ -83,5 +85,8 @@ class CustomerController extends Controller
     public function destroy(Customer $customer)
     {
         //
+
+        $customer->delete();
+        return back();
     }
 }

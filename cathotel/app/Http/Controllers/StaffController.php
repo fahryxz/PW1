@@ -65,6 +65,8 @@ class StaffController extends Controller
     public function edit(Staff $staff)
     {
         //
+        return view('staff.edit')
+        ->with('staff', $staff);
     }
 
     /**
@@ -73,6 +75,7 @@ class StaffController extends Controller
     public function update(Request $request, Staff $staff)
     {
         //
+        
     }
 
     /**
@@ -81,5 +84,8 @@ class StaffController extends Controller
     public function destroy(Staff $staff)
     {
         //
+
+        $staff->delete();
+        return back();
     }
 }

@@ -69,6 +69,8 @@ class HewanController extends Controller
     public function edit(Hewan $hewan)
     {
         //
+        return view('hewan.edit')
+        ->with('hewan', $hewan);
     }
 
     /**
@@ -85,5 +87,7 @@ class HewanController extends Controller
     public function destroy(Hewan $hewan)
     {
         //
+        $hewan->delete();
+        return back();
     }
 }
