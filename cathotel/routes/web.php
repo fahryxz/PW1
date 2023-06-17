@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HewanController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\RoomController;
@@ -32,3 +33,4 @@ Route::resource('customer', CustomerController::class);
 Route::resource('paket', PaketController::class);
 Route::resource('staff', StaffController::class);
 Route::resource('room', RoomController::class);
+Route::get('/dashboard', [DashboardController::class, 'index']) ->name('dashboard');
