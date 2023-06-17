@@ -61,6 +61,8 @@ class RoomController extends Controller
     public function edit(Room $room)
     {
         //
+        return view('room.edit')
+        ->with('room', $room);
     }
 
     /**
@@ -69,6 +71,14 @@ class RoomController extends Controller
     public function update(Request $request, Room $room)
     {
         //
+        $validasi = $request -> validate([
+            'kamartersedia' => 'required',
+            'kamarditempati' => 'required',
+         ]);
+         Customer::where('id', $room -> id) -> update($validasi);
+            return redirect() 
+            -> route('room.index') 
+            -> with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -77,5 +87,7 @@ class RoomController extends Controller
     public function destroy(Room $room)
     {
         //
+        $room->delete();
+        return back();
     }
 }

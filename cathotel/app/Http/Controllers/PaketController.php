@@ -66,6 +66,8 @@ class PaketController extends Controller
     public function edit(Paket $paket)
     {
         //
+        return view('paket.edit')
+        ->with('paket', $paket);
     }
 
     /**
@@ -74,6 +76,16 @@ class PaketController extends Controller
     public function update(Request $request, Paket $paket)
     {
         //
+        $validasi = $request -> validate([
+            'tiperuang' => 'required',
+            'makanan' => 'required',
+            'grooming' => 'required',
+            'hargaperhari' => 'required'
+         ]);
+         Customer::where('id', $paket -> id) -> update($validasi);
+            return redirect() 
+            -> route('paket.index') 
+            -> with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -82,5 +94,7 @@ class PaketController extends Controller
     public function destroy(Paket $paket)
     {
         //
+        $paket->delete();
+        return back();
     }
 }
