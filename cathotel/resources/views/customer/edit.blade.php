@@ -31,7 +31,7 @@
                   name= "namaCustomer"
                   placeholder="John Doe"
                   aria-label="John Doe"
-                  value = "{{old('namaCustomer')}}"
+                  value = "{{$customer -> namaCustomer}}"
                 />
                 @error('namaCustomer')
                   <span class = "txt-danger">{{$message}} </span>
@@ -50,7 +50,7 @@
                   class="form-control"
                   name="alamatCustomer"
                   placeholder="ACME Inc."
-                  value = "{{old('alamatCustomer')}}"
+                  value = "{{$customer ->alamatCustomer}}"
                 />
                 @error('alamatCustomer')
                   <span class = "txt-danger">{{$message}} </span>
@@ -69,7 +69,7 @@
                     class="form-control"
                     name="nohpCustomer"
                     placeholder="ACME Inc."
-                    value = "{{old('nohpCustomer')}}"
+                    value = "{{$customer ->nohpCustomer}}"
                   />
                   @error('nohpCustomer')
                     <span class = "txt-danger">{{$message}} </span>
@@ -87,7 +87,7 @@
                   class="form-control"
                   placeholder="john.doe"
                   aria-label="john.doe"
-                  value = "{{old('emailCustomer')}}"
+                  value = "{{$customer ->emailCustomer}}"
                 />
                 @error('emailCustomer')
                   <span class = "txt-danger">{{$message}} </span>

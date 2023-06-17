@@ -25,6 +25,7 @@ class CustomerController extends Controller
     public function create()
     {
         //
+        $customer = Customer::all();
         return view('customer.create');
     }
 
@@ -49,10 +50,13 @@ class CustomerController extends Controller
  
          $customer -> save();
  
-         return redirect() -> route('customer.index') -> with('success', 'Data berhasil disimpan');
+         return redirect() 
+         -> route('customer.index') 
+         -> with('success', 'Data berhasil disimpan');
  
     }
 
+    
     /**
      * Display the specified resource.
      */
@@ -77,6 +81,16 @@ class CustomerController extends Controller
     public function update(Request $request, Customer $customer)
     {
         //
+        $validasi = $request -> validate([
+            'namaCustomer' => 'required',
+            'alamatCustomer' => 'required',
+            'nohpCustomer' => 'required',
+            'emailCustomer' => 'required'
+         ]);
+         Customer::where('id', $customer -> id) -> update($validasi);
+            return redirect() 
+            -> route('customer.index') 
+            -> with('success', 'Data berhasil disimpan');
     }
 
     /**
