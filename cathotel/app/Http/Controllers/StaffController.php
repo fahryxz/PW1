@@ -24,6 +24,7 @@ class StaffController extends Controller
     public function create()
     {
         //
+        $staff = Staff::all();
         return view('staff.create');
         
     }
@@ -75,7 +76,16 @@ class StaffController extends Controller
     public function update(Request $request, Staff $staff)
     {
         //
-        
+        $validasi = $request -> validate([
+            'namastaff' => 'required',
+            'alamatstaff' => 'required',
+            'emailstaff' => 'required'
+        ]);
+
+        Staff::where('id', $staff -> id) -> update($validasi);
+        return redirect() 
+        -> route('staff.index')
+        -> with('success', 'Data berhasil diubah');
     }
 
     /**

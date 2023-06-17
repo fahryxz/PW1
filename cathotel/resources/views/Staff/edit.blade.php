@@ -17,8 +17,9 @@
           <h5 class="mb-0">Tambah Staff</h5>
         </div>
         <div class="card-body">
-          <form action = "{{route('staff.store')}}" method = "POST" class="forms-sample">
+          <form action = "{{route('staff.update', $staff->id)}}" method = "POST" class="forms-sample">
             @csrf
+            @method('patch')
             <div class="mb-3">
               <label for="namastaff">Nama Staff</label>
               <div class="input-group input-group-merge">
@@ -31,7 +32,7 @@
                   name= "namastaff"
                   placeholder="John Doe"
                   aria-label="John Doe"
-                  value = "{{old('namastaff')}}"
+                  value = "{{$staff->namastaff}}"
                 />
                 @error('namastaff')
                   <span class = "txt-danger">{{$message}} </span>
@@ -50,7 +51,7 @@
                   class="form-control"
                   name="alamatstaff"
                   placeholder="ACME Inc."
-                  value = "{{old('alamatstaff')}}"
+                  value = "{{$staff-> alamatstaff}}"
                 />
                 @error('alamatstaff')
                   <span class = "txt-danger">{{$message}} </span>
@@ -68,7 +69,7 @@
                   class="form-control"
                   placeholder="john.doe"
                   aria-label="john.doe"
-                  value = "{{old('emailstaff')}}"
+                  value = "{{$staff->emailstaff}}"
                 />
                 @error('emailstaff')
                   <span class = "txt-danger">{{$message}} </span>
