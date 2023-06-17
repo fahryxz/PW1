@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::dropIfExists('hewans');
         Schema::create('hewans', function (Blueprint $table) {
+            
             $table->uuid('id');
             $table->primary('id');
             
-            $table->uuid('idcustomers');
-            $table->foreign('id')->references('id')->on('customers');
+            $table->uuid('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->string('namaHewan', 50);
             $table->string('jenisHewan', 50);
             $table->string('jkHewan', 50);

@@ -14,13 +14,13 @@
     <div class="col-xl">
       <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
-          <h5 class="mb-0">Tambah Staff</h5>
+          <h5 class="mb-0">Tambah Hewan</h5>
         </div>
         <div class="card-body">
-          <form action = "{{route('staff.store')}}" method = "POST" class="forms-sample">
+          <form action = "{{route('hewan.store')}}" method = "POST" class="forms-sample">
             @csrf
             <div class="mb-3">
-              <label for="namastaff">Nama Staff</label>
+              <label for="namaHewan">Nama Hewan</label>
               <div class="input-group input-group-merge">
                 <span id="basic-icon-default-fullname2" class="input-group-text"
                   ><i class="bx bx-user"></i
@@ -28,12 +28,12 @@
                 <input
                   type="text"
                   class="form-control"
-                  name= "namastaff"
+                  name= "namaHewan"
                   placeholder="John Doe"
                   aria-label="John Doe"
-                  value = "{{old('namastaff')}}"
+                  value = "{{old('namaHewan')}}"
                 />
-                @error('namastaff')
+                @error('namaHewan')
                   <span class = "txt-danger">{{$message}} </span>
                 @enderror
               </div>
@@ -51,34 +51,64 @@
                   @endforeach
                   
                 </select>
-                @error('alamatstaff')
+                @error('customer_id')
                   <span class = "txt-danger">{{$message}} </span>
                 @enderror
               </div>
             </div>
 
             <div class="mb-3">
-              <label for="emailstaff">Email</label>
+              <label for="jenisHewan">Jenis Hewan</label>
               <div class="input-group input-group-merge">
                 <span class="input-group-text"><i class="bx bx-envelope"></i></span>
                 <input
                   type="text"
-                  name="emailstaff"
+                  name="jenisHewan"
                   class="form-control"
                   placeholder="john.doe"
                   aria-label="john.doe"
-                  value = "{{old('emailstaff')}}"
+                  value = "{{old('jenisHewan')}}"
                 />
-                @error('emailstaff')
+                @error('jenisHewan')
                   <span class = "txt-danger">{{$message}} </span>
                 @enderror
               </div>
               <div class="form-text">You can use letters, numbers & periods</div>
             </div>
             
+            <div class="form-group">
+              <label for="jkHewan">Jenis Kelamin</label>
+              
+              <select name = "jkHewan" class="form-control" >
+                  <option value = "perempuan"> Perempuan </option>
+                  <option value = "perempuan"> Laki-Laki </option>
+                
+              </select>
+              @error('jkHewan')
+              <span class = "txt-danger">{{$message}} </span>
+              @enderror
+            </div>
             
+            <div class="mb-3">
+              <label for="breedHewan">Breed Hewan</label>
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-envelope"></i></span>
+                <input
+                  type="text"
+                  name="breedHewan"
+                  class="form-control"
+                  placeholder="john.doe"
+                  aria-label="john.doe"
+                  value = "{{old('breedHewan')}}"
+                />
+                @error('breedHewan')
+                  <span class = "txt-danger">{{$message}} </span>
+                @enderror
+              </div>
+              <div class="form-text">You can use letters, numbers & periods</div>
+            </div>
             <button type="submit" class="btn btn-info">Send</button>
-            <a href = "{{route('staff.index')}}" class="btn btn-secondary">Cancel</a>
+            <a href = "{{route('hewan.index')}}" class="btn btn-secondary">Cancel</a>
           </form>
         </div>
       </div>

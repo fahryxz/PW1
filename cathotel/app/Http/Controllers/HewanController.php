@@ -37,7 +37,7 @@ class HewanController extends Controller
 
         $validasi = $request -> validate([
             'namaHewan' => 'required',
-            'namaPemilik' => 'required',
+            'customer_id' => 'required',
             'jenisHewan' => 'required',
             'jkHewan' => 'required',
             'breedHewan' => 'required'
@@ -45,14 +45,13 @@ class HewanController extends Controller
  
          $hewan = new Hewan();
          $hewan -> namaHewan = $validasi['namaHewan'];
-         $hewan -> namaPemilik = $validasi['namaPemilik'];
+         $hewan -> customer_id = $validasi['customer_id'];
          $hewan -> jenisHewan = $validasi['jenisHewan'];
          $hewan -> jkHewan = $validasi['jkHewan'];
          $hewan -> breedHewan = $validasi['breedHewan'];
          $hewan -> save();
  
          return redirect() -> route('hewan.index') -> with('success', 'Data berhasil disimpan');
- 
     }
 
     /**
@@ -69,8 +68,6 @@ class HewanController extends Controller
     public function edit(Hewan $hewan)
     {
         //
-        return view('hewan.edit')
-        ->with('hewan', $hewan);
     }
 
     /**
@@ -87,7 +84,5 @@ class HewanController extends Controller
     public function destroy(Hewan $hewan)
     {
         //
-        $hewan->delete();
-        return back();
     }
 }

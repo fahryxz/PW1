@@ -26,7 +26,7 @@
             @foreach ($hewans as $item)
                 <tr>
                     <td>{{ $item['namaHewan']}}</td>
-                    <td>{{ $item['idCustomer'] -> namaCustomer}}</td>
+                    <td>{{ $item['customers'] -> namaCustomer}}</td>
                     <td>{{ $item['jenisHewan']}}</td>
                     <td>{{ $item['jkHewan']}}</td>
                     <td>{{ $item['breedHewan']}} </td>
