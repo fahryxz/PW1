@@ -45,9 +45,10 @@
                 <span id="basic-icon-default-company2" class="input-group-text"
                   ><i class="bx bx-buildings"></i
                 ></span>
-                <select name = "customer_id" class="form-control" >
+                <select name = "customer_id" class="form-select" >
+                  <option selected>Pilih nama customer yang bersangkutan</option>
                   @foreach($customers as $item)
-                      <option value = "{{$item -> id }}"> {{$item -> namaCustomer}} </option>
+                      <option value = "{{$item -> id }}"> {{$item -> namaCustomer}} - {{$item -> nohpCustomer}} </option>
                   @endforeach
                   
                 </select>
@@ -73,15 +74,28 @@
                   <span class = "txt-danger">{{$message}} </span>
                 @enderror
               </div>
-              <div class="form-text">You can use letters, numbers & periods</div>
+              
             </div>
             
             <div class="form-group">
               <label for="jkHewan">Jenis Kelamin</label>
               
-              <select name = "jkHewan" class="form-control" >
-                  <option value = "perempuan"> Perempuan </option>
-                  <option value = "perempuan"> Laki-Laki </option>
+              {{-- <select name = "jkHewan" class="form-control" >
+                  <option value = "Perempuan"> Perempuan </option>
+                  <option value = "Laki-Laki"> Laki-Laki </option> --}}
+                
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="jkHewan" value = "Perempuan">
+                    <label class="form-check-label" for="jkHewan">
+                      Perempuan
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="jkHewan" value = "Laki-Laki">
+                    <label class="form-check-label" for="jkHewan">
+                      Laki-laki
+                    </label>
+                  </div>
                 
               </select>
               @error('jkHewan')

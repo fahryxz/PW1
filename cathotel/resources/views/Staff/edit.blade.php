@@ -14,7 +14,7 @@
     <div class="col-xl">
       <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
-          <h5 class="mb-0">Tambah Staff</h5>
+          <h5 class="mb-0">Ubah Staff</h5>
         </div>
         <div class="card-body">
           <form action = "{{route('staff.update', $staff->id)}}" method = "POST" class="forms-sample">
@@ -75,7 +75,7 @@
                   <span class = "txt-danger">{{$message}} </span>
                 @enderror
               </div>
-              <div class="form-text">You can use letters, numbers & periods</div>
+             
             </div>
             
             

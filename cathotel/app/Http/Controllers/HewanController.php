@@ -68,6 +68,8 @@ class HewanController extends Controller
     public function edit(Hewan $hewan)
     {
         //
+        return view('hewan.edit')
+        ->with('hewan', $hewan);
     }
 
     /**
@@ -76,6 +78,17 @@ class HewanController extends Controller
     public function update(Request $request, Hewan $hewan)
     {
         //
+        $validasi = $request -> validate([
+            'namaHewan' => 'required',
+            'customer_id' => 'required',
+            'jenisHewan' => 'required',
+            'jkHewan' => 'required',
+            'breedHewan' => 'required'
+         ]);
+        Hewan::where('id', $hewan -> id) -> update($validasi);
+        return redirect() 
+        -> route('hewan.index') 
+        -> with('success', 'Data berhasil diubah');
     }
 
     /**
@@ -84,5 +97,7 @@ class HewanController extends Controller
     public function destroy(Hewan $hewan)
     {
         //
+        $hewan -> delete();
+        return back();
     }
 }

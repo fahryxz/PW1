@@ -17,8 +17,9 @@
           <h5 class="mb-0">Tambah Customer</h5>
         </div>
         <div class="card-body">
-          <form action = "{{route('customer.store')}}" method = "POST" class="forms-sample">
+          <form action = "{{route('customer.update', $customer -> id)}}" method = "POST" class="forms-sample">
             @csrf
+            @method('patch')
             <div class="mb-3">
               <label for="namaCustomer">Nama Customer</label>
               <div class="input-group input-group-merge">
