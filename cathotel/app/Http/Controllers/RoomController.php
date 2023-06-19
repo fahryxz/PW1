@@ -75,7 +75,7 @@ class RoomController extends Controller
             'kamartersedia' => 'required',
             'kamarditempati' => 'required',
          ]);
-         Customer::where('id', $room -> id) -> update($validasi);
+         Room::where('id', $room -> id) -> update($validasi);
             return redirect() 
             -> route('room.index') 
             -> with('success', 'Data berhasil disimpan');

@@ -82,7 +82,7 @@ class PaketController extends Controller
             'grooming' => 'required',
             'hargaperhari' => 'required'
          ]);
-         Customer::where('id', $paket -> id) -> update($validasi);
+         Paket::where('id', $paket -> id) -> update($validasi);
             return redirect() 
             -> route('paket.index') 
             -> with('success', 'Data berhasil disimpan');
