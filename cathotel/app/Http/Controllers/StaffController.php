@@ -94,7 +94,7 @@ class StaffController extends Controller
     public function destroy(Staff $staff)
     {
         //
-
+        $this->authorize('delete', $staff);
         $staff->delete();
         return back();
     }

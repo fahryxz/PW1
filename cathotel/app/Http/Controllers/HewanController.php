@@ -68,8 +68,11 @@ class HewanController extends Controller
     public function edit(Hewan $hewan)
     {
         //
+        $customer = Customer::orderBy('namaCustomer', 'ASC') -> get();
         return view('hewan.edit')
-        ->with('hewan', $hewan);
+        ->with('hewan', $hewan)
+        ->with('customer', $customer);
+        
     }
 
     /**
@@ -86,6 +89,7 @@ class HewanController extends Controller
             'breedHewan' => 'required'
          ]);
         Hewan::where('id', $hewan -> id) -> update($validasi);
+        $hewan -> save();
         return redirect() 
         -> route('hewan.index') 
         -> with('success', 'Data berhasil diubah');

@@ -73,7 +73,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
+            <a href="{{ route ('dashboard')}}" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg
                   width="25"
@@ -558,7 +558,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
+                            <span class="fw-semibold d-block">{{Auth::user() -> name}}</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -592,10 +592,23 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="auth-login-basic.html">
+
+                      {{-- <a class="dropdown-item" href="auth-login-basic.html">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
+                      </a> --}}
+                        <!-- Authentication -->
+                    <form method="POST" action="{{ route('logout') }}">
+                      @csrf
+
+                      <a class="nav-link dropdown-item" href="route('logout')"
+                              onclick="event.preventDefault();
+                              this.closest('form').submit();">
+                          <i class="bx bx-power-off me-2"></i>                
+                          <span class="align-middle">{{ __('Log Out') }} </span>
                       </a>
+                  </form>
+
                     </li>
                   </ul>
                 </li>

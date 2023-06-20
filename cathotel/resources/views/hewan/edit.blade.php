@@ -48,14 +48,14 @@
                 ></span>
                 <select name = "customer_id" class="form-select" >
                   
-                  @foreach($customers as $item)
+                  @foreach($customer as $item)
                       <option 
                       @if ($hewan->customer_id == $item -> id)
                       selected
                       @endif
 
                       value = "{{$item['id']}}">
-                      {{$item -> customer -> namaCustomer}} - {{$item['nohpCustomer']}}
+                      {{$item -> customer -> namaCustomer?? 'None'}} - {{$item['nohpCustomer']}}
                       </option>
                   @endforeach
                   
