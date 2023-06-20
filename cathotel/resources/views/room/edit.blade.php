@@ -19,7 +19,7 @@
         <div class="card-body">
         <form action = "{{route('room.update', $room->id)}}" method = "POST" class="forms-sample" enctype="multipart/form-data">
             @csrf
-            
+            @method('patch')
             <div class="mb-3">
               <label for="kamartersedia">Kamar tersedia</label>
               <div class="input-group input-group-merge">
@@ -30,7 +30,7 @@
                   class="form-control"
                   placeholder="john.doe"
                   aria-label="john.doe"
-                  value = "{{old('kamartersedia')}}"
+                  value = "{{$room -> kamartersedia}}"
                 />
                 @error('kamartersedia')
                   <span class = "txt-danger">{{$message}} </span>
@@ -47,7 +47,7 @@
                   class="form-control"
                   placeholder="john.doe"
                   aria-label="john.doe"
-                  value = "{{old('kamarditempati')}}"
+                  value = "{{$room -> kamarditempati}}"
                 />
                 @error('kamarditempati')
                   <span class = "txt-danger">{{$message}} </span>

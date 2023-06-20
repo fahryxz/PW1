@@ -13,6 +13,8 @@ class PetroomController extends Controller
     public function index()
     {
         //
+        $petroom = Petroom::all();
+        return view('petroom.index') -> with('petrooms', $petroom);
     }
 
     /**
