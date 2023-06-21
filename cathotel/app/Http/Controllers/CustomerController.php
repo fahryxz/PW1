@@ -99,7 +99,7 @@ class CustomerController extends Controller
     public function destroy(Customer $customer)
     {
         //
-
+        $this->authorize('delete', $customer);
         $customer->delete();
         return back();
     }

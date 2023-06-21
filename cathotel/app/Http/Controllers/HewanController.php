@@ -101,6 +101,7 @@ class HewanController extends Controller
     public function destroy(Hewan $hewan)
     {
         //
+        $this->authorize('delete', $hewan);
         $hewan -> delete();
         return back();
     }

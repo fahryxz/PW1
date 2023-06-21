@@ -87,6 +87,7 @@ class RoomController extends Controller
     public function destroy(Room $room)
     {
         //
+        $this->authorize('delete', $room);
         $room->delete();
         return back();
     }

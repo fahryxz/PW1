@@ -48,7 +48,7 @@
                   
                 </div>
                 <span>Staff</span>
-                <h3 class="card-title text-nowrap mb-1">Belum</h3>
+                <h3 class="card-title text-nowrap mb-1">{{count($staff)}}</h3>
                 
               </div>
             </div>
@@ -74,7 +74,7 @@
         <div class="col-lg-12 order-2 order-md-3 order-lg-2 mb-4">
           <div class="card">
             <div class="row row-bordered g-0"> 
-              <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
+              <h5 class="card-header m-0 me-2 pb-3">Total Jenis Hewan</h5>
             </div>
             {{-- grafik --}}
           <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -85,11 +85,7 @@
           <figure class="highcharts-figure">
               <div id="container"></div>
               <p class="highcharts-description">
-                  A basic column chart comparing emissions by pollutant.
-                  Oil and gas extraction has the overall highest amount of
-                  emissions, followed by manufacturing industries and mining.
-                  The chart is making use of the axis crosshair feature, to highlight
-                  years as they are hovered over.
+                  Di atas adalah grafik jenis hewan yang pernah menginap di Cat Hotel.
               </p>
           </figure>
 
@@ -152,21 +148,18 @@
                   type: 'column'
               },
               title: {
-                  text: 'Monthly Average Rainfall'
-              },
-              subtitle: {
-                  text: 'Source: WorldClimate.com'
+                  text: 'Jenis Hewan'
               },
               xAxis: {
                   categories: [
-                      'a', 'b' , 'c'
+                      'Anjing', 'Kucing' , 'Naga'
                   ],
                   crosshair: true
               },
               yAxis: {
                   min: 0,
                   title: {
-                      text: 'Rainfall (mm)'
+                      text: 'Jumlah'
                   }
               },
               tooltip: {
@@ -184,9 +177,10 @@
                   }
               },
               series: [{
-                  name: 'Mahasiswa',
-                  data: [1,2,3]
-
+                name: 'Jenis Hewan',
+                  data: [@foreach($jenishewan as $item)
+                                {{$item->jumlah}},
+                                @endforeach]
               }]
           });
           </script>
