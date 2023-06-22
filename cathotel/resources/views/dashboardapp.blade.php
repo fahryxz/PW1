@@ -85,7 +85,7 @@
           <figure class="highcharts-figure">
               <div id="container"></div>
               <p class="highcharts-description">
-                  Di atas adalah grafik jenis hewan yang pernah menginap di Cat Hotel.
+                  Di atas adalah grafik jenis hewan yang pernah menginap di Pet Hotel.
               </p>
           </figure>
 

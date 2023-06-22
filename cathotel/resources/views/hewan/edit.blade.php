@@ -93,13 +93,15 @@
                   <option value = "Laki-Laki"> Laki-Laki </option> --}}
                 
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="jkHewan" value = "{{$hewan->jkHewan}}">
+                  <input type="radio" name="jkHewan" value="Perempuan"  {{ $hewan->jkHewan == "Perempuan" ? 'checked' : '' }}>
+                    <!-- <input class="form-check-input" type="radio" name="jkHewan" value = "{{$hewan->jkHewan}}"> -->
                     <label class="form-check-label" for="jkHewan">
                       Perempuan
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="jkHewan" value = "{{$hewan->jkHewan}}">
+                    <!-- <input class="form-check-input" type="radio" name="jkHewan" value = "{{$hewan->jkHewan}}"> -->
+                    <input type="radio" name="jkHewan" value="Laki-laki"  {{ $hewan->jkHewan == "Laki-laki" ? 'checked' : '' }}>
                     <label class="form-check-label" for="jkHewan">
                       Laki-laki
                     </label>
