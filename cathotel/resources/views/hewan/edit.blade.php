@@ -55,7 +55,7 @@
                       @endif
 
                       value = "{{$item['id']}}">
-                      {{$item -> customer -> namaCustomer?? 'None'}} - {{$item['nohpCustomer']}}
+                      {{$item -> customer}} - {{$item['namaCustomer']}}
                       </option>
                   @endforeach
                   
